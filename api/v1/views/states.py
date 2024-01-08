@@ -18,10 +18,10 @@ def handle_states(state_id=None):
     '''The method handler for the dtates endpoint.
     '''
     handlers = {
-        'GET': get_states,
-        'DELETE': remove_state,
-        'POST': add_state,
-        'PUT': update_state,
+            'GET': get_states,
+            'DELETE': remove_state,
+            'POST': add_state,
+            'PUT': update_state,
     }
     if request.methos in handlers:
         return handlers[request.method](state_id)

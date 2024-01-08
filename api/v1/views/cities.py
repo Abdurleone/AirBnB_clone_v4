@@ -17,10 +17,10 @@ def handle_cities(state_id=None, city_id=None):
     '''The method handler for the cities endpoint.
     '''
     handlers = {
-        'GET': get_cities,
-        'DELETE': remove_city,
-        'POST': add_city,
-        'PUT': update_city,
+            'GET': get_cities,
+            'DELETE': remove_city,
+            'POST': add_city,
+            'PUT': update_city,
     }
     if request.method in handlers:
         return handlers[request.method](state_id, city_id)
