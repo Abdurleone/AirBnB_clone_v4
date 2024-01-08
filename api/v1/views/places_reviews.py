@@ -78,9 +78,9 @@ def update_review(review_id):
     data = request.get_json()
     if data is None:
         abort(400, 'Not a JSON')
-    for key, value in data.items():
-        if key not in ['id', 'user_id', 'place_id', 'created_at',
-                       'updated_at']:
-            setattr(object, key, value)
-    storage.save()
-    return jsonify(object.to_dict()), 200
+        for key, value in data.items():
+            if key not in ['id', 'user_id', 'place_id', 'created_at',
+                           'updated_at']:
+                setattr(object, key, value)
+                storage.save()
+                return jsonify(object.to_dict()), 200
