@@ -15,14 +15,15 @@ ALLOWED_METHODS = ['GET', 'DELETE', 'POST', 'PUT']
 @app_views.route('/amenities', methods=ALLOWED_METHODS)
 @app_views.route('/amenities/<amenity_id>', methods=ALLOWED_METHODS)
 def handle_amenities(amenity_id=None):
-    '''The method handler for the amenities endpoint.
+    '''
+    The method handler for the amenities endpoint.
     '''
     handlers = {
-        'GET': get_amenities,
-        'DELETE': remove_amenity,
-        'POST': add_amenity,
-        'PUT': update_amenity,
-    }
+            'GET': get_amenities,
+            'DELETE': remove_amenity,
+            'POST': add_amenity,
+            'PUT': update_amenity,
+            }
     if request.method in handlers:
         return handlers[request.method](amenity_id)
     else:
