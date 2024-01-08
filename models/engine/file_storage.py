@@ -39,7 +39,7 @@ class FileStorage:
         if cls is not None:
             res = list(
                     filter(
-                        lambda x: type(x) is cls ans x.id == is,
+                        lambda x: type(x) is cls and x.id == is,
                         self.__objects.values()
                         )
                     )
