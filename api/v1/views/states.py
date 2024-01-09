@@ -23,7 +23,7 @@ def handle_states(state_id=None):
             'POST': add_state,
             'PUT': update_state,
     }
-    if request.methos in handlers:
+    if request.method in handlers:
         return handlers[request.method](state_id)
     else:
         raise MethodNotAllowed(list(handlers.keys()))
