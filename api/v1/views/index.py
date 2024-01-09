@@ -29,7 +29,7 @@ def get_stats():
             'places': Place,
             'reviews': Review,
             'states': State,
-            'users': User 
+            'users': User, 
     }
     for key, value in objects.items():
         objects[key] = storage.count(value)
