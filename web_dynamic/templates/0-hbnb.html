@@ -30,135 +30,130 @@
 
   <body>
 
-    <!-- **********************
-	 HEADER
-	 ********************** -->
-
-    <header>
-    </header>
-    <main>
-      <div class="container">
-
-	<!-- **********************
-	     FILTERS
-	     ********************** -->
-
-	<section class="filters">
-
 	  <!-- **********************
-	       LOCATIONS
-	       ********************** -->
+		  HEADER
+		  ********************** -->
 
-	  <div class="locations">
-	    <h3>States</h3>
-	    <h4>&nbsp;</h4>
-	    <ul class="popover">
-	      {% for state in states|dictsort %}
-	      <H2>{{ state[0] }}</H2>
-	      <UL>
-		{% for city in state[1].cities|sort(attribute='name') %}
-		<LI>{{ city.name }}</LI>
-		{% endfor %}
-	      </UL>
-	      {% endfor %}
-	    </ul>
-	  </div>
+		  <header>
+		  </header>
+		  <main>
+			  <div class="container">
 
-	  <!-- **********************
-	       AMENITIES
-	       ********************** -->
+				  <!-- **********************
+					  FILTERS
+					  ********************** -->
 
-	  <div class="amenities">
-	    <h3>Amenities</h3>
-	    <h4>&nbsp;</h4>
-	    <ul class="popover">
-	      {% for amenity in amens|sort(attribute='name') %}
-	      <LI>{{ amenity.name }}</LI>
-	      {% endfor %}
-	    </ul>
-	  </div>
+					  <section class="filters">
 
-	  <!-- **********************
-	       SEARCH BUTTON
-	       ********************** -->
+						  <!-- **********************
+							  LOCATIONS
+							  ********************** -->
 
-	  <button>Search</button>
-	</section>
+							  <div class="locations">
+								  <h3>States</h3>
+								  <h4>&nbsp;</h4>
+								  <ul class="popover">
+									  {% for state in states|dictsort %}
+									  <H2>{{ state[0] }}</H2>
+									  <UL>
+										  {% for city in state[1].cities|sort(attribute='name') %}
+										  <LI>{{ city.name }}</LI>
+										  {% endfor %}
+									  </UL>
+									  {% endfor %}
+								  </ul>
+							  </div>
 
-	<section class="places">
-	  <h1>Places</h1>
+							  <!-- **********************
+								  AMENITIES
+								  ********************** -->
 
-	<!-- **********************
-	     BEGIN 1 PLACE
-	     ********************** -->
+								  <div class="amenities">
+									  <h3>Amenities</h3>
+									  <h4>&nbsp;</h4>
+									  <ul class="popover">
+										  {% for amenity in amens|sort(attribute='name') %}
+										  <LI>{{ amenity.name }}</LI>
+										  {% endfor %}
+									  </ul>
+								  </div>
 
-	  {% for place in places|sort(attribute='name') %}
+								  <!-- **********************
+									  SEARCH BUTTON
+									  ********************** -->
 
-	  <article>
+									  <button>Search</button>
+					  </section>
 
-	    <div class="title">
+					  <section class="places">
+						  <h1>Places</h1>
+						  <!-- *********************
+							  BEGIN 1 PLACE
+							  ********************** -->
 
-	      <h2>{{ place.name }}</h2>
+							  {% for place in places|sort(attribute='name') %}
 
-	      <div class="price_by_night">
+							  <article>
 
-		{{ place.price_by_night }}
+								  <div class="title">
 
-	      </div>
-	    </div>
-	    <div class="information">
-	      <div class="max_guest">
-		<i class="fa fa-users fa-3x" aria-hidden="true"></i>
+									  <h2>{{ place.name }}</h2>
 
-		<br />
+									  <div class="price_by_night">
+										  {{ place.price_by_night }}
 
-		{{ place.max_guest }} Guests
+									  </div>
+								  </div>
+								  <div class="information">
+									  <div class="max_guest">
+										  <i class="fa fa-users fa-3x" aria-hidden="true"></i>
 
-	      </div>
-	      <div class="number_rooms">
-		<i class="fa fa-bed fa-3x" aria-hidden="true"></i>
+										  <br />
 
-		<br />
+										  {{ place.max_guest }} Guests
+									  </div>
+									  <div class="number_rooms">
+										  <i class="fa fa-bed fa-3x" aria-hidden="true"></i>
 
-		{{ place.number_rooms }} Bedrooms
-	      </div>
-	      <div class="number_bathrooms">
-		<i class="fa fa-bath fa-3x" aria-hidden="true"></i>
+										  <br />
 
-		<br />
+										  {{ place.number_rooms }} Bedrooms
+									  </div>
+									  <div class="number_bathrooms">
+										  <i class="fa fa-bath fa-3x" aria-hidden="true"></i>
 
-		{{ place.number_bathrooms }} Bathroom
+										  <br />
 
-	      </div>
-	    </div>
+										  {{ place.number_bathrooms }} Bathroom
 
-	    <!-- **********************
-		 USER
-		 **********************  -->
+									  </div>
+								  </div>
 
-	    <div class="user">
+								  <!-- **********************
+									  USER
+									  **********************  -->
 
-	      <strong>Owner: {{ users[place.user_id] }}</strong>
+									  <div class="user">
 
-	    </div>
-	    <div class="description">
+										  <strong>Owner: {{ users[place.user_id] }}</strong>
 
-	      {{ place.description }}
+									  </div>
 
-	    </div>
+									  <div class="description">
 
-	  </article> <!-- End 1 PLACE Article -->
+										  {{ place.description }}
 
-	  {% endfor %}
+									  </div>
 
-	</section>
-      </div>
-    </main>
+							  </article> <!-- End 1 PLACE Article -->
+							  {% endfor %}
 
-    <!-- FOOTER -->
-
-    <footer>
-      Holberton School
-    </footer>
+					  </section>
+			  </div>
+		  </main>
+		  <!-- FOOTER -->
+		  <footer>
+			  Holberton School
+		  </footer>
   </body>
 </html>
